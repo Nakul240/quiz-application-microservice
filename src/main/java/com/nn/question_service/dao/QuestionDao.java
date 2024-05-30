@@ -9,4 +9,6 @@ public interface QuestionDao {
     Question saveQuestion(Question question);
 
     List<Question> getAllQuestion();
+
+    List<Question> generateQuizQuestions(String category, int noOfQuestions);
 }

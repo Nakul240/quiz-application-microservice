@@ -23,4 +23,9 @@ public class QuestionDaoImpl implements QuestionDao {
     public List<Question> getAllQuestion() {
         return questionRepository.findAll();
     }
+
+    @Override
+    public List<Question> generateQuizQuestions(String category, int noOfQuestions) {
+        return questionRepository.generateQuizQuestions(category,noOfQuestions);
+    }
 }

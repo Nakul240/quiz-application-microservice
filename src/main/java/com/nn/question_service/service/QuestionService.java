@@ -12,4 +12,6 @@ public interface QuestionService {
     ResponseEntity<ResponseStructure<Question>> saveQuestion(Question question);
 
     ResponseEntity<ResponseStructure<List<Question>>> getAllQuestion();
+
+    ResponseEntity<ResponseStructure<List<String>>> generateQuizQuestions(String category, int noOfQuestions);
 }

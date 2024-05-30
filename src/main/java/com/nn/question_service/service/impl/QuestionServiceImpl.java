@@ -26,4 +26,11 @@ public class QuestionServiceImpl implements QuestionService {
     public ResponseEntity<ResponseStructure<List<Question>>> getAllQuestion() {
         return ResponseUtil.getCreated(questionDao.getAllQuestion());
     }
+
+    @Override
+    public ResponseEntity<ResponseStructure<List<String>>> generateQuizQuestions(String category, int noOfQuestions) {
+       List<Question> questions = questionDao.generateQuizQuestions(category,noOfQuestions);
+        List<String> questionIds = questions.stream().map(q -> q.get_id()).toList();
+        return ResponseUtil.getOk(questionIds);
+    }
 }
