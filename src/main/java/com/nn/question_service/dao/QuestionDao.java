@@ -8,7 +8,11 @@ import java.util.List;
 public interface QuestionDao {
     Question saveQuestion(Question question);
 
+    Question findById(String id);
+
     List<Question> getAllQuestion();
 
-    List<Question> generateQuizQuestions(String category, int noOfQuestions);
+    List<Question> findByCategory(String category);
+
+    List<Question> getQuestionsByIds(List<String> questionIds);
 }

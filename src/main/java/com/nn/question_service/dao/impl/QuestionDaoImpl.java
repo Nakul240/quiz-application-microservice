@@ -20,12 +20,23 @@ public class QuestionDaoImpl implements QuestionDao {
     }
 
     @Override
+    public Question findById(String id) {
+        return questionRepository.findById(id).orElseThrow(()->new RuntimeException());
+    }
+
+    @Override
     public List<Question> getAllQuestion() {
         return questionRepository.findAll();
     }
 
     @Override
-    public List<Question> generateQuizQuestions(String category, int noOfQuestions) {
-        return questionRepository.generateQuizQuestions(category,noOfQuestions);
+    public List<Question> findByCategory(String category) {
+        return questionRepository.findByCategory(category);
     }
+
+    @Override
+    public List<Question> getQuestionsByIds(List<String> questionIds) {
+        return questionRepository.findBy_idIn(questionIds);
+    }
+
 }
