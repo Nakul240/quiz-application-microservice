@@ -7,6 +7,7 @@ import com.nn.question_service.data.models.entity.Question;
 import com.nn.question_service.service.QuestionService;
 import com.nn.question_service.util.SequenceGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

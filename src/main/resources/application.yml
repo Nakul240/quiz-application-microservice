@@ -1,7 +1,11 @@
 spring:
   application:
-    name: question service
+    name: question-service
   data:
     mongodb:
       uri: mongodb://localhost:27017/questionServiceDb
       auto-index: true
+
+server:
+  port:
+    8080
